@@ -1,0 +1,23 @@
+spring:
+  config:
+    import:
+      - optional:file:.env[.properties]
+  application:
+    name: products
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST}
+      bindings:
+        productConsumer-in-0:
+          destination: inventory
+          group: products-group
+  data:
+    mongodb:
+      uri: ${MONGODB_HOST}
+meilisearch:
+  host-url: ${MEILISEARCH_HOST}
+  api-key: masterKey123
+server:
+  port: 8002
