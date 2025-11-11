@@ -6,9 +6,7 @@ services:
           context: .
           dockerfile: Dockerfile.dev
         ports:
-          - "8003:80"
-        environment:
-          SERVER_PORT: 80
+          - 8002:80
         depends_on:
           - mongodb
           - meilisearch

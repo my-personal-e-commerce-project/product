@@ -12,7 +12,7 @@ import microservice.ecommerce.products.infrastructure.mediator.Mediator;
 
 @Configuration
 @RequiredArgsConstructor
-public class ProductConsume {
+public class Consumers {
 
     private final Mediator mediator;
 
