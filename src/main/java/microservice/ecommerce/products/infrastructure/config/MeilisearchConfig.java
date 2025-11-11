@@ -10,10 +10,8 @@ import com.meilisearch.sdk.Config;
 @Configuration
 public class MeilisearchConfig {
 
-    @Value("${meilisearch.api-key}")
     private String apiKey;
 
-    @Value("${meilisearch.host-url}")
     private String hostUrl;
 
     @Bean

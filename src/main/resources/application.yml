@@ -2,7 +2,4 @@ spring:
   application:
     name: products
   config:
-    import:
-      - optional:file:.env[.properties]
-      - optional:configserver:${CONFIG_SERVER}
-
+    import: "optional:configserver:"
