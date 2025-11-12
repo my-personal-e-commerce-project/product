@@ -1,6 +1,6 @@
 package microservice.ecommerce.products.application.ports.in;
 
-import java.util.Locale.Category;
+import microservice.ecommerce.products.domain.entity.Category;
 
 public interface DeleteCategoryUseCasePort {
 

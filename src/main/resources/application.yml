@@ -3,7 +3,7 @@ spring:
     name: products
   config:
     import: 
-      - optional:file:.env[.properties]
+      - optional:classpath:.env[.properties]
       - "configserver:"
   cloud:
     config:

@@ -27804,3 +27804,802 @@ java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.Call
 2025.11.12 09:45:26 INFO  time: Connected to build server in 3.19s[0m
 2025.11.12 09:45:26 INFO  Connected to Build server: Bloop v1.4.13[0m
 2025.11.12 09:45:28 INFO  time: indexed workspace in 1.36s[0m
+2025.11.12 11:32:50 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/lsp.trace.json or /home/mauro/.cache/metals/lsp.trace.json[0m
+2025.11.12 11:32:51 INFO  logging to file /home/mauro/project/microservice_laravel/products/.metals/metals.log[0m
+2025.11.12 11:32:51 INFO  Started: Metals version 0.11.2 in workspace '/home/mauro/project/microservice_laravel/products' for client coc.nvim 0.0.82.[0m
+2025.11.12 11:32:51 INFO  Parse release: 21.0.8[0m
+2025.11.12 11:32:53 INFO  time: initialize in 2.33s[0m
+2025.11.12 11:32:54 INFO  Attempting to connect to the build server...[0m
+2025.11.12 11:32:53 INFO  skipping build import with status 'Requested'[0m
+2025.11.12 11:32:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/bsp.trace.json or /home/mauro/.cache/metals/bsp.trace.json[0m
+2025.11.12 11:32:56 INFO  time: Connected to build server in 2.96s[0m
+2025.11.12 11:32:56 INFO  Connected to Build server: Bloop v1.4.13[0m
+2025.11.12 11:32:58 INFO  time: indexed workspace in 1.36s[0m
+2025.11.12 11:33:19 INFO  compiling products (1 java source)[0m
+2025.11.12 11:33:19 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:33:19 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:33:20 INFO  time: compiled products in 1.06s[0m
+2025.11.12 11:33:35 INFO  compiling products (1 java source)[0m
+2025.11.12 11:33:35 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:7: error: cannot find symbol
+    public void execute(Category category) {
+                        ^
+  symbol:   class Category
+  location: class CreateCategoryUseCase
+1 error.[0m
+2025.11.12 11:33:35 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:33:35 WARN  javac exited with exit code 1[0m
+2025.11.12 11:33:35 INFO  time: compiled products in 0.81s[0m
+2025.11.12 11:33:45 INFO  compiling products (1 java source)[0m
+2025.11.12 11:33:45 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:6: error: CreateCategoryUseCase is not abstract and does not override abstract method execute(Product) in CreateProductUseCasePort
+public class CreateCategoryUseCase implements CreateProductUseCasePort {
+       ^
+1 error.[0m
+2025.11.12 11:33:45 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:33:45 WARN  javac exited with exit code 1[0m
+2025.11.12 11:33:45 INFO  time: compiled products in 0.85s[0m
+2025.11.12 11:33:48 INFO  compiling products (1 java source)[0m
+2025.11.12 11:33:48 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:6: error: CreateCategoryUseCase is not abstract and does not override abstract method execute(Product) in CreateProductUseCasePort
+public class CreateCategoryUseCase implements CreateProductUseCasePort {
+       ^
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:8: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors.[0m
+2025.11.12 11:33:48 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:33:48 WARN  javac exited with exit code 1[0m
+2025.11.12 11:33:48 INFO  time: compiled products in 0.87s[0m
+2025.11.12 11:34:17 INFO  compiling products (1 java source)[0m
+2025.11.12 11:34:17 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:34:17 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:34:17 INFO  time: compiled products in 0.96s[0m
+2025.11.12 11:34:19 INFO  compiling products (1 java source)[0m
+2025.11.12 11:34:19 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:34:19 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:34:19 INFO  time: compiled products in 0.92s[0m
+2025.11.12 11:34:36 INFO  compiling products (1 java source)[0m
+2025.11.12 11:34:36 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:8: error: cannot find symbol
+    private CategoryRepository categoryRepository;
+            ^
+  symbol:   class CategoryRepository
+  location: class CreateCategoryUseCase
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/CreateCategoryUseCase.java:10: error: cannot find symbol
+    public CreateCategoryUseCase(CategoryRepository categoryRepository) {
+                                 ^
+  symbol:   class CategoryRepository
+  location: class CreateCategoryUseCase
+2 errors.[0m
+2025.11.12 11:34:36 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:34:36 WARN  javac exited with exit code 1[0m
+2025.11.12 11:34:36 INFO  time: compiled products in 0.82s[0m
+2025.11.12 11:34:41 INFO  compiling products (1 java source)[0m
+2025.11.12 11:34:41 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:34:41 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:34:41 INFO  time: compiled products in 0.94s[0m
+2025.11.12 11:34:53 INFO  compiling products (1 java source)[0m
+2025.11.12 11:34:53 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:34:53 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:34:53 INFO  time: compiled products in 0.7s[0m
+2025.11.12 11:35:17 INFO  compiling products (1 java source)[0m
+2025.11.12 11:35:17 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:35:17 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:35:17 INFO  time: compiled products in 0.89s[0m
+2025.11.12 11:35:34 INFO  compiling products (1 java source)[0m
+2025.11.12 11:35:34 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:35:34 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:35:34 INFO  time: compiled products in 0.95s[0m
+2025.11.12 11:35:57 INFO  compiling products (1 java source)[0m
+2025.11.12 11:35:57 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:35:57 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:35:57 INFO  time: compiled products in 0.73s[0m
+2025.11.12 11:36:23 INFO  compiling products (1 java source)[0m
+2025.11.12 11:36:23 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/DeleteCategoryUseCase.java:6: error: DeleteCategoryUseCase is not abstract and does not override abstract method execute(Locale$Category) in DeleteCategoryUseCasePort
+public class DeleteCategoryUseCase implements DeleteCategoryUseCasePort {
+       ^
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/DeleteCategoryUseCase.java:14: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors.[0m
+2025.11.12 11:36:23 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:36:23 WARN  javac exited with exit code 1[0m
+2025.11.12 11:36:23 INFO  time: compiled products in 0.9s[0m
+2025.11.12 11:36:48 INFO  compiling products (1 java source)[0m
+2025.11.12 11:36:48 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/DeleteCategoryUseCase.java:7: error: DeleteCategoryUseCase is not abstract and does not override abstract method execute(Locale$Category) in DeleteCategoryUseCasePort
+public class DeleteCategoryUseCase implements DeleteCategoryUseCasePort {
+       ^
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/application/use_cases/DeleteCategoryUseCase.java:15: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors.[0m
+2025.11.12 11:36:48 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:36:48 WARN  javac exited with exit code 1[0m
+2025.11.12 11:36:48 INFO  time: compiled products in 0.91s[0m
+2025.11.12 11:37:02 INFO  compiling products (2 java sources)[0m
+2025.11.12 11:37:02 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:37:02 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:37:02 INFO  time: compiled products in 0.94s[0m
+java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.CallbackRunnable@45756cd8 rejected from java.util.concurrent.ThreadPoolExecutor@3349e9bb[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 887]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at scala.concurrent.impl.ExecutionContextImpl$$anon$4.execute(ExecutionContextImpl.scala:138)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:288)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025.11.12 11:49:15 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/lsp.trace.json or /home/mauro/.cache/metals/lsp.trace.json[0m
+2025.11.12 11:49:15 INFO  logging to file /home/mauro/project/microservice_laravel/products/.metals/metals.log[0m
+2025.11.12 11:49:15 INFO  Started: Metals version 0.11.2 in workspace '/home/mauro/project/microservice_laravel/products' for client coc.nvim 0.0.82.[0m
+2025.11.12 11:49:15 INFO  Parse release: 21.0.8[0m
+2025.11.12 11:49:18 INFO  time: initialize in 2.33s[0m
+2025.11.12 11:49:18 INFO  Attempting to connect to the build server...[0m
+2025.11.12 11:49:18 INFO  skipping build import with status 'Requested'[0m
+2025.11.12 11:49:20 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/bsp.trace.json or /home/mauro/.cache/metals/bsp.trace.json[0m
+2025.11.12 11:49:20 INFO  time: Connected to build server in 2.36s[0m
+2025.11.12 11:49:20 INFO  Connected to Build server: Bloop v1.4.13[0m
+2025.11.12 11:49:22 INFO  time: indexed workspace in 1.27s[0m
+2025.11.12 11:51:38 INFO  compiling products (1 java source)[0m
+2025.11.12 11:51:38 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/presentation/controller/CategoryController.java:9: error: package jakarta.ws.rs does not exist
+import jakarta.ws.rs.Path;
+                    ^
+1 error.[0m
+2025.11.12 11:51:38 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:51:38 WARN  javac exited with exit code 1[0m
+2025.11.12 11:51:38 INFO  time: compiled products in 0.87s[0m
+2025.11.12 11:51:41 INFO  compiling products (1 java source)[0m
+2025.11.12 11:51:41 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:51:41 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:51:42 INFO  time: compiled products in 1.12s[0m
+2025.11.12 11:52:46 INFO  compiling products (1 java source)[0m
+2025.11.12 11:52:46 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:52:46 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:52:46 INFO  time: compiled products in 0.69s[0m
+2025.11.12 11:53:10 INFO  compiling products (1 java source)[0m
+2025.11.12 11:53:10 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:53:10 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:53:10 INFO  time: compiled products in 0.84s[0m
+2025.11.12 11:53:39 INFO  compiling products (1 java source)[0m
+2025.11.12 11:53:39 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:53:39 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:53:39 INFO  time: compiled products in 0.94s[0m
+2025.11.12 11:53:44 INFO  compiling products (1 java source)[0m
+2025.11.12 11:53:44 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:53:44 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:53:45 INFO  time: compiled products in 1.01s[0m
+2025.11.12 11:53:57 INFO  compiling products (1 java source)[0m
+2025.11.12 11:53:57 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 11:53:57 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 11:53:57 INFO  time: compiled products in 0.67s[0m
+2025.11.12 12:16:10 INFO  compiling products (1 java source)[0m
+2025.11.12 12:16:10 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:16:10 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:16:10 INFO  time: compiled products in 0.91s[0m
+2025.11.12 12:17:03 INFO  compiling products (1 java source)[0m
+2025.11.12 12:17:03 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:17:03 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:17:03 INFO  time: compiled products in 0.69s[0m
+2025.11.12 12:17:39 INFO  compiling products (1 java source)[0m
+2025.11.12 12:17:39 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:17:39 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:17:39 INFO  time: compiled products in 0.86s[0m
+2025.11.12 12:18:23 INFO  compiling products (1 java source)[0m
+2025.11.12 12:18:23 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:18:23 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:18:23 INFO  time: compiled products in 0.92s[0m
+2025.11.12 12:18:26 INFO  compiling products (1 java source)[0m
+2025.11.12 12:18:26 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:18:26 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:18:26 INFO  time: compiled products in 0.94s[0m
+2025.11.12 12:18:57 INFO  compiling products (1 java source)[0m
+2025.11.12 12:18:57 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:18:57 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:18:57 INFO  time: compiled products in 0.89s[0m
+2025.11.12 12:19:01 INFO  compiling products (1 java source)[0m
+2025.11.12 12:19:01 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:19:01 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:19:01 INFO  time: compiled products in 0.91s[0m
+2025.11.12 12:19:54 INFO  compiling products (1 java source)[0m
+2025.11.12 12:19:54 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:19:54 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:19:54 INFO  time: compiled products in 0.92s[0m
+2025.11.12 12:20:19 INFO  compiling products (1 java source)[0m
+2025.11.12 12:20:19 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:20:19 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:20:19 INFO  time: compiled products in 0.95s[0m
+2025.11.12 12:20:47 INFO  compiling products (1 java source)[0m
+2025.11.12 12:20:47 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/ProductsApplication.java:87: error: method createProductUseCase(ProductRepository) is already defined in class ProductsApplication
+    public CreateProductUseCasePort createProductUseCase(
+                                    ^
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/ProductsApplication.java:41: error: incompatible types: ProductRepository cannot be converted to CategoryRepository
+        return new DeleteCategoryUseCase(productRepository);
+                                         ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors.[0m
+2025.11.12 12:20:47 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:20:47 WARN  javac exited with exit code 1[0m
+2025.11.12 12:20:47 INFO  time: compiled products in 0.71s[0m
+2025.11.12 12:20:59 INFO  compiling products (1 java source)[0m
+2025.11.12 12:20:59 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:20:59 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:20:59 INFO  time: compiled products in 0.98s[0m
+2025.11.12 12:21:26 INFO  compiling products (1 java source)[0m
+2025.11.12 12:21:26 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:21:26 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:21:26 INFO  time: compiled products in 0.93s[0m
+2025.11.12 12:22:44 INFO  compiling products (1 java source)[0m
+2025.11.12 12:22:44 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/CreatedCategory.java:16: error: incompatible types: CategoryDto cannot be converted to Category
+            event
+            ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:22:44 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:22:44 WARN  javac exited with exit code 1[0m
+2025.11.12 12:22:44 INFO  time: compiled products in 0.85s[0m
+2025.11.12 12:23:09 INFO  compiling products (1 java source)[0m
+2025.11.12 12:23:09 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/CreatedCategory.java:17: error: incompatible types: CategoryDto cannot be converted to Category
+            MapCategory.fromCategory(event)
+                                     ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:23:09 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:23:09 WARN  javac exited with exit code 1[0m
+2025.11.12 12:23:09 INFO  time: compiled products in 0.92s[0m
+2025.11.12 12:23:19 INFO  compiling products (1 java source)[0m
+2025.11.12 12:23:19 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:23:19 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:23:19 INFO  time: compiled products in 0.83s[0m
+2025.11.12 12:23:41 INFO  compiling products (1 java source)[0m
+2025.11.12 12:23:41 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:23:41 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:23:41 INFO  time: compiled products in 0.88s[0m
+2025.11.12 12:24:05 INFO  compiling products (1 java source)[0m
+2025.11.12 12:24:05 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/UpdatedCategory.java:16: error: incompatible types: Category cannot be converted to CategoryDto
+        updateCategoryUseCase.execute(MapCategory.map(event)); 
+                                                      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:24:05 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:24:05 WARN  javac exited with exit code 1[0m
+2025.11.12 12:24:05 INFO  time: compiled products in 0.91s[0m
+2025.11.12 12:24:24 INFO  compiling products (1 java source)[0m
+2025.11.12 12:24:24 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:24:24 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:24:24 INFO  time: compiled products in 0.88s[0m
+2025.11.12 12:24:28 INFO  compiling products (1 java source)[0m
+2025.11.12 12:24:28 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:24:28 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:24:28 INFO  time: compiled products in 0.88s[0m
+2025.11.12 12:30:51 INFO  compiling products (1 java source)[0m
+2025.11.12 12:30:51 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/consumer/Consumers.java:27: error: cannot find symbol
+    public Consumer<EventConsume<CategoryDto>> categoryConsumer() {
+                                 ^
+  symbol:   class CategoryDto
+  location: class Consumers
+1 error.[0m
+2025.11.12 12:30:51 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:30:51 WARN  javac exited with exit code 1[0m
+2025.11.12 12:30:51 INFO  time: compiled products in 0.84s[0m
+2025.11.12 12:30:57 INFO  compiling products (1 java source)[0m
+2025.11.12 12:30:57 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:30:57 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:30:57 INFO  time: compiled products in 0.97s[0m
+2025.11.12 12:31:23 INFO  compiling products (1 java source)[0m
+2025.11.12 12:31:23 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:31:23 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:31:23 INFO  time: compiled products in 0.95s[0m
+2025.11.12 12:32:27 INFO  compiling products (1 java source)[0m
+2025.11.12 12:32:27 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/ProductsApplication.java:126: error: cannot find symbol
+            updatedCategoryUseCase
+            ^
+  symbol:   variable updatedCategoryUseCase
+  location: class ProductsApplication
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/ProductsApplication.java:130: error: cannot find symbol
+            deltedCategoryUseCase 
+            ^
+  symbol:   variable deltedCategoryUseCase
+  location: class ProductsApplication
+2 errors.[0m
+2025.11.12 12:32:27 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:32:27 WARN  javac exited with exit code 1[0m
+2025.11.12 12:32:27 INFO  time: compiled products in 0.91s[0m
+2025.11.12 12:33:21 INFO  compiling products (1 java source)[0m
+2025.11.12 12:33:21 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/ProductsApplication.java:130: error: cannot find symbol
+            delteCategoryUseCase 
+            ^
+  symbol:   variable delteCategoryUseCase
+  location: class ProductsApplication
+1 error.[0m
+2025.11.12 12:33:21 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:33:21 WARN  javac exited with exit code 1[0m
+2025.11.12 12:33:21 INFO  time: compiled products in 0.89s[0m
+2025.11.12 12:33:23 INFO  compiling products (1 java source)[0m
+2025.11.12 12:33:23 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:33:23 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:33:23 INFO  time: compiled products in 0.96s[0m
+2025.11.12 12:35:39 INFO  compiling products (1 java source)[0m
+2025.11.12 12:35:39 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:35:39 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:35:39 INFO  time: compiled products in 0.86s[0m
+2025.11.12 12:36:40 INFO  compiling products (1 java source)[0m
+2025.11.12 12:36:40 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:36:40 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:36:40 INFO  time: compiled products in 0.69s[0m
+2025.11.12 12:37:06 INFO  compiling products (1 java source)[0m
+2025.11.12 12:37:06 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:37:06 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:37:06 INFO  time: compiled products in 0.88s[0m
+2025.11.12 12:37:12 INFO  compiling products (1 java source)[0m
+2025.11.12 12:37:12 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:37:12 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:37:12 INFO  time: compiled products in 1s[0m
+2025.11.12 12:37:12 INFO  compiling products (4 java sources)[0m
+2025.11.12 12:37:14 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:37:14 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:37:14 INFO  time: compiled products in 0.88s[0m
+2025.11.12 12:37:20 INFO  compiling products (1 java source)[0m
+2025.11.12 12:37:21 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:37:21 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:37:21 INFO  time: compiled products in 1.03s[0m
+2025.11.12 12:37:21 INFO  compiling products (4 java sources)[0m
+2025.11.12 12:37:21 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:37:21 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:37:21 INFO  time: compiled products in 0.92s[0m
+2025.11.12 12:41:15 INFO  compiling products (1 java source)[0m
+2025.11.12 12:41:15 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:41:15 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:41:15 INFO  time: compiled products in 0.94s[0m
+2025.11.12 12:42:09 INFO  compiling products (1 java source)[0m
+2025.11.12 12:42:09 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/DeletedCategory.java:17: error: incompatible types: DeleteDto cannot be converted to CategoryDto
+        deleteCategoryUseCase.execute(MapCategory.map(event));
+                                                      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:42:09 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:42:09 WARN  javac exited with exit code 1[0m
+2025.11.12 12:42:09 INFO  time: compiled products in 0.84s[0m
+2025.11.12 12:42:58 INFO  compiling products (1 java source)[0m
+2025.11.12 12:42:58 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/DeletedCategory.java:18: error: incompatible types: DeleteDto cannot be converted to CategoryDto
+        deleteCategoryUseCase.execute(MapCategory.map(event));
+                                                      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:42:58 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:42:58 WARN  javac exited with exit code 1[0m
+2025.11.12 12:42:58 INFO  time: compiled products in 0.86s[0m
+2025.11.12 12:43:03 INFO  compiling products (1 java source)[0m
+2025.11.12 12:43:03 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:43:03 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:43:03 INFO  time: compiled products in 0.86s[0m
+2025.11.12 12:43:03 INFO  compiling products (1 java source)[0m
+2025.11.12 12:43:05 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:43:05 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:43:05 INFO  time: compiled products in 0.92s[0m
+2025.11.12 12:43:26 INFO  compiling products (1 java source)[0m
+2025.11.12 12:43:26 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+/home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/mediator/handler/DeletedProduct.java:19: error: incompatible types: DeleteDto cannot be converted to ProductDto
+            MapProduct.map(event)
+                           ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error.[0m
+2025.11.12 12:43:26 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:43:26 WARN  javac exited with exit code 1[0m
+2025.11.12 12:43:26 INFO  time: compiled products in 0.8s[0m
+2025.11.12 12:43:29 INFO  compiling products (1 java source)[0m
+2025.11.12 12:43:29 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:43:29 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:43:29 INFO  time: compiled products in 0.91s[0m
+2025.11.12 12:43:29 INFO  compiling products (1 java source)[0m
+2025.11.12 12:43:31 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 12:43:31 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 12:43:31 INFO  time: compiled products in 0.91s[0m
+2025.11.12 13:14:40 INFO  compiling products (1 java source)[0m
+2025.11.12 13:14:40 WARN  Unexpected javac output: error: file not found: /home/mauro/project/microservice_laravel/products/src/main/java/microservice/ecommerce/products/infrastructure/repository/CategoryRepositoryAdapter.java
+Usage: javac <options> <source files>
+use --help for a list of possible options.[0m
+2025.11.12 13:14:40 WARN  javac exited with exit code 2[0m
+2025.11.12 13:14:40 INFO  time: compiled products in 0.19s[0m
+2025.11.12 13:14:40 INFO  compiling products (1 java source)[0m
+2025.11.12 13:14:41 WARN  Unexpected javac output: Note: Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing..[0m
+2025.11.12 13:14:41 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
+2025.11.12 13:14:41 INFO  time: compiled products in 1.04s[0m

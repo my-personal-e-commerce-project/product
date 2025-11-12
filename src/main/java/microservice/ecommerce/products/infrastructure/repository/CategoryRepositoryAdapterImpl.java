@@ -10,7 +10,7 @@ import microservice.ecommerce.products.infrastructure.repository.mongodb.Categor
 
 @Repository
 @RequiredArgsConstructor
-public class CategoryRepositoryAdapter implements CategoryRepository {
+public class CategoryRepositoryAdapterImpl implements CategoryRepository {
 
     private final CategoryMongoRepository categoryMongoRepository;
 

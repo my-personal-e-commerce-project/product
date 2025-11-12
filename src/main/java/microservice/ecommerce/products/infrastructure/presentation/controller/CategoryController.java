@@ -2,6 +2,7 @@ package microservice.ecommerce.products.infrastructure.presentation.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class CategoryController {
     private final FindCategoryBySlugUseCasePort findCategoryBySlugUseCasePort;
 
     @GetMapping("/id/{id}")
-    public ResponseEntity<ResponsePayload> getCategoryById(String id) {
+    public ResponseEntity<ResponsePayload> getCategoryById(@PathVariable String id) {
         Category category = findCategoryByIdUseCasePort.execute(id);
 
         return ResponseEntity.ok(ResponsePayload.builder().data(
@@ -30,7 +31,7 @@ public class CategoryController {
     }
 
     @GetMapping("/slug/{slug}")
-    public ResponseEntity<ResponsePayload> getCategoryBySlug(String slug) {
+    public ResponseEntity<ResponsePayload> getCategoryBySlug(@PathVariable String slug) {
         Category category = findCategoryBySlugUseCasePort.execute(slug);
 
         return ResponseEntity.ok(ResponsePayload.builder().data(
