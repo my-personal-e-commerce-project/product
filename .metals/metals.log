@@ -47073,3 +47073,27 @@ import microservice.ecommerce.products.domain.entity.Category;
 2025.11.13 16:36:24 INFO  Note: Annotation processing is enabled because one or more processors were found[0m
 2025.11.13 16:36:24 WARN  javac exited with exit code 1[0m
 2025.11.13 16:36:24 INFO  time: compiled products in 0.84s[0m
+java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.CallbackRunnable@21d350db rejected from java.util.concurrent.ThreadPoolExecutor@3349e9bb[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 8481]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)
+	at scala.concurrent.impl.ExecutionContextImpl$$anon$4.execute(ExecutionContextImpl.scala:138)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:288)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025.11.13 16:48:44 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/lsp.trace.json or /home/mauro/.cache/metals/lsp.trace.json[0m
+2025.11.13 16:48:45 INFO  logging to file /home/mauro/project/microservice_laravel/products/.metals/metals.log[0m
+2025.11.13 16:48:45 INFO  Started: Metals version 0.11.2 in workspace '/home/mauro/project/microservice_laravel/products' for client coc.nvim 0.0.82.[0m
+2025.11.13 16:48:45 INFO  Parse release: 21.0.8[0m
+2025.11.13 16:48:47 INFO  time: initialize in 2.02s[0m
+2025.11.13 16:48:47 INFO  Attempting to connect to the build server...[0m
+2025.11.13 16:48:49 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mauro/project/microservice_laravel/products/.metals/bsp.trace.json or /home/mauro/.cache/metals/bsp.trace.json[0m
