@@ -17,6 +17,7 @@ import microservice.ecommerce.products.infrastructure.helpers.MapProduct;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
+
     private final FindProductByIdUseCasePort findByIdUseCasePort;
     private final FindProductBySlugUseCasePort findBySlugUseCasePort;
 

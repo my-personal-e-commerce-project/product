@@ -8,27 +8,12 @@ services:
         environment:
           EUREKA_HOST: eureka-service-1:80
         depends_on:
-          - mongodb
           - meilisearch
         networks:
           - sail 
         volumes:
           - ./src:/app/src
           - ./pom.xml:/app/pom.xml
-          - ./target:/app/target
-    mongodb:
-        image: mongo:7
-        container_name: mongodb
-        ports:
-          - 27017:27017
-        environment:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: root
-          MONGO_INITDB_DATABASE: products
-        volumes:
-          - mongo-data:/data/db
-        networks:
-          - sail
     meilisearch:
       image: getmeili/meilisearch:v1.11
       container_name: meilisearch

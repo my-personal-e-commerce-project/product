@@ -5,8 +5,9 @@ import java.util.function.Consumer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.RequiredArgsConstructor;
-import microservice.ecommerce.products.infrastructure.dtos.CategoryDto;
 import microservice.ecommerce.products.infrastructure.dtos.DeleteDto;
 import microservice.ecommerce.products.infrastructure.dtos.EventConsume;
 import microservice.ecommerce.products.infrastructure.dtos.ProductDto;
@@ -19,23 +20,18 @@ public class Consumers {
     private final Mediator mediator;
 
     @Bean
-    public Consumer<EventConsume<ProductDto>> productConsumer() {
+    public Consumer<EventConsume> productConsumer() {
         return event -> {
-            mediator.send(event);
-        };
-    }
+            String type = event.getEvent();
+            ObjectMapper mapper = new ObjectMapper();
 
-    @Bean
-    public Consumer<EventConsume<DeleteDto>> productDeletedConsumer() {
-        return event -> {
-            mediator.send(event);
-        };
-    }
-
-    @Bean
-    public Consumer<EventConsume<CategoryDto>> categoryConsumer() {
-        return event -> {
-            mediator.send(event);
+            if (type.endsWith("product.deleted")) {
+                DeleteDto delete = mapper.convertValue(event.getPayload(), DeleteDto.class);
+                mediator.send(type, delete);
+            } else if (type.startsWith("product")) {
+                ProductDto product = mapper.convertValue(event.getPayload(), ProductDto.class);
+                mediator.send(type, product);
+            }
         };
     }
 }
