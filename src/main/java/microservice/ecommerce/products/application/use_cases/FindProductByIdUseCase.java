@@ -2,6 +2,7 @@ package microservice.ecommerce.products.application.use_cases;
 
 import microservice.ecommerce.products.application.ports.in.FindProductByIdUseCasePort;
 import microservice.ecommerce.products.domain.entity.Product;
+import microservice.ecommerce.products.domain.exception.ProductNotFound;
 import microservice.ecommerce.products.domain.repository.ProductRepository;
 
 public class FindProductByIdUseCase implements FindProductByIdUseCasePort {
@@ -14,6 +15,11 @@ public class FindProductByIdUseCase implements FindProductByIdUseCasePort {
 
     @Override
     public Product execute(String id) {
-        return productRepository.findById(id);
+        Product product = productRepository.findById(id);
+
+        if(product == null)
+            throw new ProductNotFound();
+
+        return product;
     }
 }

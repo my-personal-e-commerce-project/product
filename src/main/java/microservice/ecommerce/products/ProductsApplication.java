@@ -2,6 +2,7 @@ package microservice.ecommerce.products;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import microservice.ecommerce.products.application.ports.in.CreateProductUseCasePort;
@@ -24,6 +25,7 @@ import microservice.ecommerce.products.infrastructure.mediator.handler.CreatedPr
 import microservice.ecommerce.products.infrastructure.mediator.handler.DeletedProduct;
 import microservice.ecommerce.products.infrastructure.mediator.handler.UpdatedProduct;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class ProductsApplication {
 
