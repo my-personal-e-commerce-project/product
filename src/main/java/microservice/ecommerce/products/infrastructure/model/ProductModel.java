@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 
 import io.vanslog.spring.data.meilisearch.annotations.Document;
+import io.vanslog.spring.data.meilisearch.annotations.Setting;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,23 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(indexUid = "products")
+@Setting(
+    filterableAttributes = {
+        "id",
+        "slug",
+        "category_id",
+        "price",
+        "stock"
+    },
+    searchableAttributes = {
+        "name",
+        "description",
+    },
+    sortableAttributes = {
+        "price",
+        "stock"
+    }
+)
 public class ProductModel {
 
     @Id

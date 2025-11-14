@@ -1,22 +1,23 @@
 package microservice.ecommerce.products.infrastructure.repository;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meilisearch.sdk.Client;
+import com.meilisearch.sdk.Index;
 import com.meilisearch.sdk.SearchRequest;
 import com.meilisearch.sdk.model.Searchable;
 
 import lombok.RequiredArgsConstructor;
 import microservice.ecommerce.products.domain.entity.Product;
 import microservice.ecommerce.products.domain.repository.ProductRepository;
-import microservice.ecommerce.products.infrastructure.dtos.ProductDto;
 import microservice.ecommerce.products.infrastructure.model.ProductModel;
 import microservice.ecommerce.products.infrastructure.repository.meilisearch.ProductMeilisearchRepository;
+import com.meilisearch.sdk.model.SearchResultPaginated;
 
 @Repository
 @RequiredArgsConstructor
@@ -28,15 +29,15 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
 
     @Override
     public List<Product> search(String query, int page, int size) {
-        int offset = page * size;
+        Index index = meilisearch.index("products");
 
         SearchRequest searchRequest = new SearchRequest(query)
-            .setLimit(size)
-            .setOffset(offset);
+            .setPage(page)
+            .setHitsPerPage(size);
 
-        Searchable searchResult = meilisearch.index("products").search(searchRequest);
-       
-        return toProducts(searchResult.getHits().toString());
+        SearchResultPaginated searchResult = (SearchResultPaginated) index.search(searchRequest);
+      
+        return toProducts(searchResult.getHits());
     }
 
     @Override
@@ -50,7 +51,7 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
 
         Searchable searchResult = meilisearch.index("products").search(searchRequest);
 
-        return toProducts(searchResult.getHits().toString());
+        return toProducts(searchResult.getHits());
     }
 
     @Override
@@ -60,7 +61,7 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
 
         Searchable searchResult = meilisearch.index("products").search(searchRequest);
 
-        List<Product> products = toProducts(searchResult.getHits().toString());
+        List<Product> products = toProducts(searchResult.getHits());
 
         if (products.isEmpty()) {
             return null;
@@ -76,7 +77,7 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
 
         Searchable searchResult = meilisearch.index("products").search(searchRequest);
 
-        List<Product> products = toProducts(searchResult.getHits().toString());
+        List<Product> products = toProducts(searchResult.getHits());
 
         if (products.isEmpty()) {
             return null;
@@ -87,6 +88,7 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
 
     @Override
     public void save(Product product) {
+        
         productMeilisearchRepository.save(toDocument(product));
     }
 
@@ -98,19 +100,6 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
     @Override
     public void delete(String id) {
         productMeilisearchRepository.deleteById(id);
-    }
-
-    private Product toProduct(ProductDto productModel) {
-        return new Product(
-                productModel.getId(),
-                productModel.getName(),
-                productModel.getSlug(),
-                productModel.getDescription(),
-                productModel.getPrice(),
-                productModel.getStock(),
-                productModel.getImages(),
-                productModel.getCategory_id()
-            );
     }
 
     private ProductModel toDocument(Product product) {
@@ -126,21 +115,20 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
         );
     }
 
-    private List<Product> toProducts(String hits) {
+    private List<Product> toProducts(ArrayList<HashMap<String, Object>> hits) {
 
         try {
-            List<ProductDto> products = objectMapper.readValue(
-                hits,
-                objectMapper.getTypeFactory().constructCollectionType(List.class, ProductDto.class)
-            );
+             List<Product> products = new ArrayList<>();
+        
+            for (HashMap<String, Object> hit : hits) {
+                Product doc = objectMapper.convertValue(hit, Product.class);
+                products.add(doc);
+            }
 
-            return products.stream().map(p -> toProduct(p)).toList();
+            return products;
         }
-        catch (JsonProcessingException e) { 
-            throw new RuntimeException("Error al mapear resultados de búsqueda.", e);
+        catch (Exception e) { 
+            throw new RuntimeException("Error searching products", e);
         } 
-        catch (IOException e) {
-            throw new RuntimeException("Error de I/O al leer la respuesta de búsqueda.", e);
-        }
     }
 }
