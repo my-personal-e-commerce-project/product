@@ -1,8 +1,10 @@
 package microservice.ecommerce.products.infrastructure.repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -28,7 +30,7 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
     private final ProductMeilisearchRepository productMeilisearchRepository;
 
     @Override
-    public List<Product> search(String query, int page, int size) {
+    public List<Product> search(String query, Map<String, String> sort, int page, int size) {
         Index index = meilisearch.index("products");
 
         SearchRequest searchRequest = new SearchRequest(query)
@@ -41,15 +43,23 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
     }
 
     @Override
-    public List<Product> findAllByCategory(String categoryId, int page, int size) {
-        int offset = page * size;
+    public List<Product> findAllByFilters(Map<String, String> filters, Map<String, String> sort, int page, int size) {
 
         SearchRequest searchRequest = new SearchRequest("")
-            .setFilter(new String[]{"category_id = '" + categoryId + "'"})
-            .setLimit(size)
-            .setOffset(offset);
+            .setPage(page)
+            .setHitsPerPage(size);
 
-        Searchable searchResult = meilisearch.index("products").search(searchRequest);
+        String[] filtersArray = toFiltersArray(filters);
+        if (filtersArray != null)
+            searchRequest.setFilter(filtersArray);
+
+        String[] sortArray = toSortArray(sort);
+        if (sortArray != null)
+            searchRequest.setSort(sortArray);
+
+        Searchable searchResult = meilisearch
+            .index("products")
+            .search(searchRequest);
 
         return toProducts(searchResult.getHits());
     }
@@ -130,5 +140,35 @@ public class ProductRepositoryAdapterImpl implements ProductRepository {
         catch (Exception e) { 
             throw new RuntimeException("Error searching products", e);
         } 
+    }
+
+    private String[] toSortArray(Map<String, String> map) {
+        if (map == null || map.isEmpty()) {
+            return null;
+        }
+        
+        String[] result = map.entrySet().stream()
+            .filter(e -> e.getValue() != null && !e.getValue().isEmpty())
+            .filter(e -> {
+                String order = e.getValue().toLowerCase();
+                return order.equals("asc") || order.equals("desc");
+            })
+            .map(e -> e.getKey() + ":" + e.getValue().toLowerCase())
+            .toArray(String[]::new);
+        
+        return result.length > 0 ? result : null;
+    }
+
+    private String[] toFiltersArray(Map<String, String> map) {
+        if (map == null || map.isEmpty()) {
+            return null;
+        }
+
+        String[] result = map.entrySet().stream()
+            .filter(e -> e.getValue() != null && !e.getValue().isEmpty())
+            .map(e -> e.getKey() + " = '" + e.getValue() + "'")
+            .toArray(String[]::new);
+        
+        return result.length > 0 ? result : null;
     }
 }

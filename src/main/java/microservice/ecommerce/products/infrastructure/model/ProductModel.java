@@ -21,8 +21,6 @@ import lombok.Setter;
         "id",
         "slug",
         "category_id",
-        "price",
-        "stock"
     },
     searchableAttributes = {
         "name",

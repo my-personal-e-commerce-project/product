@@ -1,6 +1,7 @@
 package microservice.ecommerce.products.application.use_cases;
 
 import java.util.List;
+import java.util.Map;
 
 import microservice.ecommerce.products.application.ports.in.FindAllProductsByCategoryIdUseCasePort;
 import microservice.ecommerce.products.domain.entity.Product;
@@ -15,7 +16,7 @@ public class FindAllProductsByCategoryIdUseCase implements FindAllProductsByCate
     }
 
     @Override
-    public List<Product> execute(String categoryId, int page, int size) {
-        return productRepository.findAllByCategory(categoryId, page, size);
+    public List<Product> execute(String categoryId, Map<String, String> sort, int page, int size) {
+        return productRepository.findAllByFilters(Map.of("category_id", categoryId), sort, page, size);
     }
 }

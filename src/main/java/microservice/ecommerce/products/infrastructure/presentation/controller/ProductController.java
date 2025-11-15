@@ -1,5 +1,8 @@
 package microservice.ecommerce.products.infrastructure.presentation.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,12 +36,23 @@ public class ProductController {
     public ResponseEntity<ResponsePayload> getProductsByCategory(
         @PathVariable String id, 
         @RequestParam(defaultValue = "1") int page, 
-        @RequestParam(defaultValue = "10") int size
+        @RequestParam(defaultValue = "10") int size,
+        @RequestParam(required = false) String sortBy,
+        @RequestParam(defaultValue = "asc") String sortOrder
     ) {
+        Map<String, String> sort = Map.of();
+
+        if (sortBy != null) {
+            sort.put(sortBy, sortOrder);
+        }
+
         return ResponseEntity.ok(
             ResponsePayload.builder()
             .data(
-                findAllProductsByCategoryIdUseCasePort.execute(id, page, size)
+                findAllProductsByCategoryIdUseCasePort.execute(id, sort, page, size)
+                    .stream()
+                    .map(MapProduct::fromProduct)
+                    .toList()
             ).build()
         );
     }
@@ -47,12 +61,20 @@ public class ProductController {
     public ResponseEntity<ResponsePayload> searchProducts(
         @RequestParam(defaultValue = "") String query, 
         @RequestParam(defaultValue = "1") int page, 
-        @RequestParam(defaultValue = "10") int size
+        @RequestParam(defaultValue = "10") int size,
+        @RequestParam(required = false) String sortBy,
+        @RequestParam(defaultValue = "asc") String sortOrder
     ) {
+        Map<String, String> sort = Map.of();
+
+        if (sortBy != null) {
+            sort.put(sortBy, sortOrder);
+        }
+
         return ResponseEntity.ok(
             ResponsePayload.builder()
             .data(
-                searchProductUseCasePort.execute(query, page, size)
+                searchProductUseCasePort.execute(query, sort, page, size)
                     .stream()
                     .map(MapProduct::fromProduct)
                     .toList()
