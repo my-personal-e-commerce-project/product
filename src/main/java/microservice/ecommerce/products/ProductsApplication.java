@@ -5,25 +5,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
-import microservice.ecommerce.products.application.ports.in.CreateProductUseCasePort;
-import microservice.ecommerce.products.application.ports.in.DeleteProductUseCasePort;
-import microservice.ecommerce.products.application.ports.in.FindAllProductsByCategoryIdUseCasePort;
-import microservice.ecommerce.products.application.ports.in.FindProductByIdUseCasePort;
-import microservice.ecommerce.products.application.ports.in.FindProductBySlugUseCasePort;
-import microservice.ecommerce.products.application.ports.in.SearchProductUseCasePort;
-import microservice.ecommerce.products.application.ports.in.UpdateProductUseCasePort;
-import microservice.ecommerce.products.application.use_cases.CreateProductUseCase;
-import microservice.ecommerce.products.application.use_cases.DeleteProductUseCase;
-import microservice.ecommerce.products.application.use_cases.FindAllProductsByCategoryIdUseCase;
-import microservice.ecommerce.products.application.use_cases.FindProductByIdUseCase;
-import microservice.ecommerce.products.application.use_cases.FindProductBySlugUseCase;
-import microservice.ecommerce.products.application.use_cases.SearchProductUseCase;
-import microservice.ecommerce.products.application.use_cases.UpdateProductUseCase;
-import microservice.ecommerce.products.domain.repository.ProductRepository;
-import microservice.ecommerce.products.infrastructure.mediator.Mediator;
-import microservice.ecommerce.products.infrastructure.mediator.handler.CreatedProduct;
-import microservice.ecommerce.products.infrastructure.mediator.handler.DeletedProduct;
-import microservice.ecommerce.products.infrastructure.mediator.handler.UpdatedProduct;
+import microservice.ecommerce.products.product.application.ports.in.CreateProductUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.DeleteProductUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.FindAllProductsByCategoryIdUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.FindProductByIdUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.FindProductBySlugUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.SearchProductUseCasePort;
+import microservice.ecommerce.products.product.application.ports.in.UpdateProductUseCasePort;
+import microservice.ecommerce.products.product.application.use_cases.CreateProductUseCase;
+import microservice.ecommerce.products.product.application.use_cases.DeleteProductUseCase;
+import microservice.ecommerce.products.product.application.use_cases.FindAllProductsByCategoryIdUseCase;
+import microservice.ecommerce.products.product.application.use_cases.FindProductByIdUseCase;
+import microservice.ecommerce.products.product.application.use_cases.FindProductBySlugUseCase;
+import microservice.ecommerce.products.product.application.use_cases.SearchProductUseCase;
+import microservice.ecommerce.products.product.application.use_cases.UpdateProductUseCase;
+import microservice.ecommerce.products.product.domain.repository.ProductRepository;
+import microservice.ecommerce.products.product.infrastructure.mediator.Mediator;
+import microservice.ecommerce.products.product.infrastructure.mediator.handler.CreatedProduct;
+import microservice.ecommerce.products.product.infrastructure.mediator.handler.DeletedProduct;
+import microservice.ecommerce.products.product.infrastructure.mediator.handler.UpdatedProduct;
 
 @EnableDiscoveryClient
 @SpringBootApplication
