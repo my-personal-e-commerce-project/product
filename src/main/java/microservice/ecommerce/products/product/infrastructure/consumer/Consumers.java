@@ -5,12 +5,10 @@ import java.util.function.Consumer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import lombok.RequiredArgsConstructor;
-import microservice.ecommerce.products.product.infrastructure.dtos.DeleteDto;
-import microservice.ecommerce.products.product.infrastructure.dtos.EventConsume;
-import microservice.ecommerce.products.product.infrastructure.dtos.ProductDto;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductCreatedCommand;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductDeletedCommand;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductUpdatedCommand;
 import microservice.ecommerce.products.product.infrastructure.mediator.Mediator;
 
 @Configuration
@@ -20,18 +18,23 @@ public class Consumers {
     private final Mediator mediator;
 
     @Bean
-    public Consumer<EventConsume> productConsumer() {
+    public Consumer<ProductCreatedCommand> createProduct() {
         return event -> {
-            String type = event.getEvent();
-            ObjectMapper mapper = new ObjectMapper();
+            mediator.send(event);
+        };
+    }
 
-            if (type.endsWith("product.deleted")) {
-                DeleteDto delete = mapper.convertValue(event.getPayload(), DeleteDto.class);
-                mediator.send(type, delete);
-            } else if (type.startsWith("product")) {
-                ProductDto product = mapper.convertValue(event.getPayload(), ProductDto.class);
-                mediator.send(type, product);
-            }
+    @Bean
+    public Consumer<ProductUpdatedCommand> updateProduct() {
+        return event -> {
+            mediator.send(event);
+        };
+    }
+
+    @Bean
+    public Consumer<ProductDeletedCommand> deleteProduct() {
+        return event -> {
+            mediator.send(event);
         };
     }
 }

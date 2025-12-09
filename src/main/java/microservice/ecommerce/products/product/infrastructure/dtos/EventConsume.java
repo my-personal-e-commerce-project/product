@@ -1,12 +1,10 @@
 package microservice.ecommerce.products.product.infrastructure.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.time.Instant;
 
-@Setter
-@Getter
-public class EventConsume {
-    private String event;
-    private Object payload;
+public interface EventConsume {
+
+    public String eventName();
+    public String aggregateId();
+    public Instant occurredOn();
 }
-

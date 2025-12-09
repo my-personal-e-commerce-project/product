@@ -20,6 +20,9 @@ import microservice.ecommerce.products.product.application.use_cases.FindProduct
 import microservice.ecommerce.products.product.application.use_cases.SearchProductUseCase;
 import microservice.ecommerce.products.product.application.use_cases.UpdateProductUseCase;
 import microservice.ecommerce.products.product.domain.repository.ProductRepository;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductCreatedCommand;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductDeletedCommand;
+import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductUpdatedCommand;
 import microservice.ecommerce.products.product.infrastructure.mediator.Mediator;
 import microservice.ecommerce.products.product.infrastructure.mediator.handler.CreatedProduct;
 import microservice.ecommerce.products.product.infrastructure.mediator.handler.DeletedProduct;
@@ -86,15 +89,15 @@ public class ProductsApplication {
     ) {
         Mediator mediator = new Mediator();
 
-        mediator.register("product.created", new CreatedProduct(
+        mediator.register(ProductCreatedCommand.class, new CreatedProduct(
             createProductUseCase
         ));
 
-        mediator.register("product.updated", new UpdatedProduct(
+        mediator.register(ProductUpdatedCommand.class, new UpdatedProduct(
             updateProductUseCase
         ));
         
-        mediator.register("product.deleted", new DeletedProduct(
+        mediator.register(ProductDeletedCommand.class, new DeletedProduct(
             deleteProductUseCase
         ));
 
