@@ -1,13 +1,13 @@
 package microservice.ecommerce.products.product.domain.repository;
 
-import java.util.List;
 import java.util.Map;
 
+import microservice.ecommerce.products.product.application.dtos.PaginationProducts;
+import microservice.ecommerce.products.product.application.dtos.Sort;
 import microservice.ecommerce.products.product.domain.entity.Product;
 
 public interface ProductRepository {
-    public List<Product> search(String query, Map<String, String> sort, int page, int size);
-    public List<Product> findAllByFilters(Map<String, String> filters, Map<String, String> sort, int page, int size);
+    public PaginationProducts search(String query, Sort sort, Map<String, String> filters, int page, int size);
     public Product findById(String id);
     public Product findBySlug(String slug);
     public void save(Product product);

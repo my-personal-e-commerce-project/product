@@ -1,11 +1,11 @@
 package microservice.ecommerce.products.product.application.ports.in;
 
-import java.util.List;
 import java.util.Map;
 
-import microservice.ecommerce.products.product.domain.entity.Product;
+import microservice.ecommerce.products.product.application.dtos.PaginationProducts;
+import microservice.ecommerce.products.product.application.dtos.Sort;
 
 public interface SearchProductUseCasePort {
 
-    public List<Product> execute(String query, Map<String, String> sort, int page, int size);
+    public PaginationProducts execute(String query, Sort sort, Map<String, String> filters, int page, int size);
 }

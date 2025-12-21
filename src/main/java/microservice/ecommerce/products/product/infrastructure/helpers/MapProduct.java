@@ -1,33 +1,38 @@
 package microservice.ecommerce.products.product.infrastructure.helpers;
 
 import microservice.ecommerce.products.product.domain.entity.Product;
-import microservice.ecommerce.products.product.infrastructure.dtos.ProductDto;
+import microservice.ecommerce.products.product.infrastructure.dtos.events.ProductUpdatedEvent;
+import microservice.ecommerce.products.product.infrastructure.dtos.events.ProductCreatedEvent;
 
 public class MapProduct {
 
-    public static Product map(ProductDto productDto) {
+    public static Product fromProduct(ProductCreatedEvent product) {
         return new Product(
-            productDto.getId(),
-            productDto.getName(),
-            productDto.getSlug(),
-            productDto.getDescription(),
-            productDto.getPrice(),
-            productDto.getStock(),
-            productDto.getImages(),
-            productDto.getCategory_id()
+            product.id(),
+            product.title(),
+            product.slug(),
+            product.description(),
+            product.categories(),
+            product.price(),
+            product.stock(),
+            product.images(),
+            product.attributes(),
+            product.tags()
         );
     }
 
-    public static ProductDto fromProduct(Product product) {
-        return new ProductDto(
+    public static Product fromProduct(ProductUpdatedEvent product) {
+        return new Product(
             product.id(),
-            product.name(),
+            product.title(),
             product.slug(),
             product.description(),
-            product.stock(),
+            product.categories(),
             product.price(),
+            product.stock(),
             product.images(),
-            product.category_id()
+            product.attributes(),
+            product.tags()
         );
     }
 }

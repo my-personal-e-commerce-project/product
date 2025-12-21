@@ -7,26 +7,17 @@ import org.springframework.context.annotation.Bean;
 
 import microservice.ecommerce.products.product.application.ports.in.CreateProductUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.DeleteProductUseCasePort;
-import microservice.ecommerce.products.product.application.ports.in.FindAllProductsByCategoryIdUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.FindProductByIdUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.FindProductBySlugUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.SearchProductUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.UpdateProductUseCasePort;
 import microservice.ecommerce.products.product.application.use_cases.CreateProductUseCase;
 import microservice.ecommerce.products.product.application.use_cases.DeleteProductUseCase;
-import microservice.ecommerce.products.product.application.use_cases.FindAllProductsByCategoryIdUseCase;
 import microservice.ecommerce.products.product.application.use_cases.FindProductByIdUseCase;
 import microservice.ecommerce.products.product.application.use_cases.FindProductBySlugUseCase;
 import microservice.ecommerce.products.product.application.use_cases.SearchProductUseCase;
 import microservice.ecommerce.products.product.application.use_cases.UpdateProductUseCase;
 import microservice.ecommerce.products.product.domain.repository.ProductRepository;
-import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductCreatedCommand;
-import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductDeletedCommand;
-import microservice.ecommerce.products.product.infrastructure.dtos.commands.ProductUpdatedCommand;
-import microservice.ecommerce.products.product.infrastructure.mediator.Mediator;
-import microservice.ecommerce.products.product.infrastructure.mediator.handler.CreatedProduct;
-import microservice.ecommerce.products.product.infrastructure.mediator.handler.DeletedProduct;
-import microservice.ecommerce.products.product.infrastructure.mediator.handler.UpdatedProduct;
 
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -61,13 +52,6 @@ public class ProductsApplication {
     }
 
     @Bean
-    public FindAllProductsByCategoryIdUseCasePort productRepository(
-        ProductRepository productRepository
-    ) {
-        return new FindAllProductsByCategoryIdUseCase(productRepository);
-    }
-
-    @Bean
     public FindProductByIdUseCasePort findByIdUseCasePort(
         ProductRepository productRepository
     ) {
@@ -79,29 +63,6 @@ public class ProductsApplication {
         ProductRepository productRepository
     ) {
         return new FindProductBySlugUseCase(productRepository);
-    }
-
-    @Bean
-    public Mediator mediator(
-        CreateProductUseCasePort createProductUseCase,
-        UpdateProductUseCasePort updateProductUseCase,
-        DeleteProductUseCasePort deleteProductUseCase
-    ) {
-        Mediator mediator = new Mediator();
-
-        mediator.register(ProductCreatedCommand.class, new CreatedProduct(
-            createProductUseCase
-        ));
-
-        mediator.register(ProductUpdatedCommand.class, new UpdatedProduct(
-            updateProductUseCase
-        ));
-        
-        mediator.register(ProductDeletedCommand.class, new DeletedProduct(
-            deleteProductUseCase
-        ));
-
-        return mediator;
     }
 
     public static void main(String[] args) {

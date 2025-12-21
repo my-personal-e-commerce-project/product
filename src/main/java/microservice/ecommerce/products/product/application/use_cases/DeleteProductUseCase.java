@@ -1,7 +1,6 @@
 package microservice.ecommerce.products.product.application.use_cases;
 
 import microservice.ecommerce.products.product.application.ports.in.DeleteProductUseCasePort;
-import microservice.ecommerce.products.product.domain.entity.Product;
 import microservice.ecommerce.products.product.domain.repository.ProductRepository;
 
 public class DeleteProductUseCase implements DeleteProductUseCasePort {
@@ -13,7 +12,7 @@ public class DeleteProductUseCase implements DeleteProductUseCasePort {
     }
 
     @Override
-    public void execute(Product product) {
-        productRepository.delete(product.id());
+    public void execute(String id) {
+        productRepository.delete(id);
     }
 }

@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import lombok.RequiredArgsConstructor;
-import microservice.ecommerce.products.product.application.ports.in.FindAllProductsByCategoryIdUseCasePort;
+import microservice.ecommerce.products.product.application.dtos.PaginationProducts;
+import microservice.ecommerce.products.product.application.dtos.Sort;
 import microservice.ecommerce.products.product.application.ports.in.FindProductByIdUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.FindProductBySlugUseCasePort;
 import microservice.ecommerce.products.product.application.ports.in.SearchProductUseCasePort;
 import microservice.ecommerce.products.product.domain.entity.Product;
 import microservice.ecommerce.products.product.domain.exception.ProductNotFound;
 import microservice.ecommerce.products.product.infrastructure.dtos.ResponsePayload;
-import microservice.ecommerce.products.product.infrastructure.helpers.MapProduct;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -29,55 +29,30 @@ public class ProductController {
     private final FindProductByIdUseCasePort findByIdUseCasePort;
     private final FindProductBySlugUseCasePort findBySlugUseCasePort;
     private final SearchProductUseCasePort searchProductUseCasePort;
-    private final FindAllProductsByCategoryIdUseCasePort findAllProductsByCategoryIdUseCasePort;
-
-    @GetMapping("/category/{id}")
-    public ResponseEntity<ResponsePayload> getProductsByCategory(
-        @PathVariable String id, 
-        @RequestParam(defaultValue = "1") int page, 
-        @RequestParam(defaultValue = "10") int size,
-        @RequestParam(required = false) String sortBy,
-        @RequestParam(defaultValue = "asc") String sortOrder
-    ) {
-        Map<String, String> sort = Map.of();
-
-        if (sortBy != null) {
-            sort.put(sortBy, sortOrder);
-        }
-
-        return ResponseEntity.ok(
-            ResponsePayload.builder()
-            .data(
-                findAllProductsByCategoryIdUseCasePort.execute(id, sort, page, size)
-                    .stream()
-                    .map(MapProduct::fromProduct)
-                    .toList()
-            ).build()
-        );
-    }
 
     @GetMapping
-    public ResponseEntity<ResponsePayload> searchProducts(
+    public ResponseEntity<PaginationProducts> searchProducts(
         @RequestParam(defaultValue = "") String query, 
         @RequestParam(defaultValue = "1") int page, 
         @RequestParam(defaultValue = "10") int size,
         @RequestParam(required = false) String sortBy,
-        @RequestParam(defaultValue = "asc") String sortOrder
+        @RequestParam(defaultValue = "asc") String sortOrder,
+        @RequestParam Map<String, String> filters
     ) {
-        Map<String, String> sort = Map.of();
+        Sort sort = null;
+
+        filters.remove("query");
+        filters.remove("page");
+        filters.remove("size");
+        filters.remove("sortBy");
+        filters.remove("sortOrder");
 
         if (sortBy != null) {
-            sort.put(sortBy, sortOrder);
+            sort = new Sort(sortBy, sortOrder);
         }
 
         return ResponseEntity.ok(
-            ResponsePayload.builder()
-            .data(
-                searchProductUseCasePort.execute(query, sort, page, size)
-                    .stream()
-                    .map(MapProduct::fromProduct)
-                    .toList()
-            ).build()
+            searchProductUseCasePort.execute(query, sort, filters, page, size)
         );
     }
     
@@ -88,7 +63,7 @@ public class ProductController {
         return ResponseEntity.ok(
             ResponsePayload.builder()
             .data(
-                MapProduct.fromProduct(product)
+                product
             ).build()
         );
     }
@@ -100,7 +75,7 @@ public class ProductController {
         return ResponseEntity.ok(
             ResponsePayload.builder()
             .data(
-                MapProduct.fromProduct(product)
+                product
             ).build()
         );    
     }
