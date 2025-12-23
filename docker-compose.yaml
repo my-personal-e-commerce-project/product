@@ -8,30 +8,30 @@ services:
         environment:
           EUREKA_HOST: eureka-service-1:80
         depends_on:
-          - meilisearch
+          - opensearch
         networks:
           - sail 
         volumes:
           - ./src:/app/src
           - ./pom.xml:/app/pom.xml
-    meilisearch:
-      image: getmeili/meilisearch:v1.11
-      container_name: meilisearch
-      ports:
-        - 7700:7700
+    opensearch:
+      image: opensearchproject/opensearch:2.14.0
+      container_name: opensearch
       environment:
-        MEILI_MASTER_KEY: masterKey123
+        - discovery.type=single-node
+        - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+        - OPENSEARCH_INITIAL_ADMIN_PASSWORD=Clave_Super_Segura_2025!
+        - plugins.security.disabled=true      
       volumes:
-        - meili-data:/meili_data
-      networks:
+        - opensearch-data:/usr/share/opensearch/data
+      ports:
+        - "9200:9200"
+        - "9600:9600"
+      networks: 
         - sail
 networks:
     sail:
         external: true
 volumes:
-    pgsql:
-        driver: local
-    mongo-data:
-        driver: local
-    meili-data:
+    opensearch-data:
         driver: local

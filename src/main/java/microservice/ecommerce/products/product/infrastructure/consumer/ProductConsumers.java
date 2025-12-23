@@ -25,7 +25,6 @@ public class ProductConsumers {
     @Bean
     public Consumer<ProductCreatedEvent> createProduct() {
         return event -> {
-
             createProductUseCasePort.execute(MapProduct.fromProduct(event));
         };
     }
@@ -33,10 +32,6 @@ public class ProductConsumers {
     @Bean
     public Consumer<ProductUpdatedEvent> updateProduct() {
         return event -> {
-            System.out.println("hola");
-            System.out.println("hola");
-            System.out.println("hola");
-            System.out.println(event);
             updateProductUseCasePort.execute(MapProduct.fromProduct(event));
         };
     }

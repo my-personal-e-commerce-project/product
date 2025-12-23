@@ -9,21 +9,37 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import microservice.ecommerce.products.category.application.ports.in.ListCategoryAttributesUseCasePort;
-import microservice.ecommerce.products.category.domain.entity.CategoryAttribute;
+import microservice.ecommerce.products.category.application.ports.in.ListCategoriesByIdsUseCasePort;
+import microservice.ecommerce.products.category.application.ports.in.ListCategoriesUseCasePort;
+import microservice.ecommerce.products.category.domain.entity.Category;
+import microservice.ecommerce.products.shared.application.dtos.Pagination;
 
 @RestController
 @RequestMapping("/api/v1/categories")
 @RequiredArgsConstructor
 public class CategoryController {
   
-    private final ListCategoryAttributesUseCasePort listCategoryAttributesUseCasePort;
-    
+    private final ListCategoriesByIdsUseCasePort listCategoriesByIdsUseCasePort;
+    private final ListCategoriesUseCasePort listCategoriesUseCasePort;
+   
     @GetMapping
-    public ResponseEntity<List<CategoryAttribute>> listCategoriesByIds(@RequestParam List<String> ids) {
+    public ResponseEntity<Pagination<Category>> listCategories(
+        @RequestParam(required = false) String parent_id, 
+        @RequestParam(defaultValue = "1") int page, 
+        @RequestParam(defaultValue = "10") int size
+    ) {
 
         return ResponseEntity.ok(
-            listCategoryAttributesUseCasePort.execute(ids)
+            listCategoriesUseCasePort.execute(parent_id, page, size)
+        );
+    }
+
+    @GetMapping
+    @RequestMapping(name = "/attributes")
+    public ResponseEntity<List<Category>> listCategoriesByIds(@RequestParam List<String> ids) {
+
+        return ResponseEntity.ok(
+            listCategoriesByIdsUseCasePort.execute(ids)
         );
     }
 }

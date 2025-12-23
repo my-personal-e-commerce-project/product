@@ -2,10 +2,6 @@ package microservice.ecommerce.products.product.infrastructure.persistence.model
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-
-import io.vanslog.spring.data.meilisearch.annotations.Document;
-import io.vanslog.spring.data.meilisearch.annotations.Setting;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,26 +12,9 @@ import microservice.ecommerce.products.product.domain.entity.ProductAttribute;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexUid = "products")
-@Setting(
-    filterableAttributes = {
-        "id",
-        "slug",
-        "categories"
-    },
-    searchableAttributes = {
-        "title",
-        "description",
-        "tags"
-    },
-    sortableAttributes = {
-        "price",
-        "stock"
-    }
-)
+
 public class ProductModel {
 
-    @Id
     private String id;
     private String title;
     private String slug;

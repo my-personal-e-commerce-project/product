@@ -2,10 +2,6 @@ package microservice.ecommerce.products.category.infrastructure.persistence.mode
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-
-import io.vanslog.spring.data.meilisearch.annotations.Document;
-import io.vanslog.spring.data.meilisearch.annotations.Setting;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,24 +12,8 @@ import microservice.ecommerce.products.category.domain.entity.CategoryAttribute;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexUid = "categories")
-@Setting(
-    filterableAttributes = {
-        "id",
-        "slug",
-        "name",
-        "parent_id"
-    },
-    searchableAttributes = {
-        "name"
-    },
-    sortableAttributes = {
-        "name"
-    }
-)
 public class CategoryModel {
 
-    @Id
     private String id;
     private String name;
     private String slug;

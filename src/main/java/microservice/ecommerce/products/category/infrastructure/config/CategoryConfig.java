@@ -5,12 +5,14 @@ import org.springframework.context.annotation.Configuration;
 
 import microservice.ecommerce.products.category.application.ports.in.CreateCategoryUseCasePort;
 import microservice.ecommerce.products.category.application.ports.in.DeleteCategoryUseCasePort;
-import microservice.ecommerce.products.category.application.ports.in.ListCategoryAttributesUseCasePort;
+import microservice.ecommerce.products.category.application.ports.in.ListCategoriesByIdsUseCasePort;
+import microservice.ecommerce.products.category.application.ports.in.ListCategoriesUseCasePort;
 import microservice.ecommerce.products.category.application.ports.in.UpdateCategoryUseCasePort;
 import microservice.ecommerce.products.category.application.ports.out.CategoryReadRepository;
 import microservice.ecommerce.products.category.application.use_cases.CreateCategoryUseCase;
 import microservice.ecommerce.products.category.application.use_cases.DeleteCategoryUseCase;
-import microservice.ecommerce.products.category.application.use_cases.ListCategoryAttributesUseCase;
+import microservice.ecommerce.products.category.application.use_cases.ListCategoriesByIdsUseCase;
+import microservice.ecommerce.products.category.application.use_cases.ListCategoriesUseCase;
 import microservice.ecommerce.products.category.application.use_cases.UpdateCategoryUseCase;
 import microservice.ecommerce.products.category.domain.repository.CategoryRepository;
 
@@ -18,10 +20,17 @@ import microservice.ecommerce.products.category.domain.repository.CategoryReposi
 public class CategoryConfig {
 
     @Bean
-    public ListCategoryAttributesUseCasePort listCategoryAttributesUseCasePort(
+    public ListCategoriesUseCasePort listCategoriesUseCasePort(
+        CategoryReadRepository categoryReadRepository
+    ) {
+        return new ListCategoriesUseCase(categoryReadRepository);
+    }
+
+    @Bean
+    public ListCategoriesByIdsUseCasePort listCategoriesByIdsUseCasePort(
         CategoryReadRepository categoryRepository
     ) {
-        return new ListCategoryAttributesUseCase(categoryRepository);
+        return new ListCategoriesByIdsUseCase(categoryRepository);
     }
 
     @Bean

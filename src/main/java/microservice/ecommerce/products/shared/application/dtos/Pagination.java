@@ -4,6 +4,6 @@ import java.util.List;
 
 public record Pagination<T> (
     List<T> result,
-    String current_page,
-    String last_page
+    int current_page,
+    int last_page
 ) {}

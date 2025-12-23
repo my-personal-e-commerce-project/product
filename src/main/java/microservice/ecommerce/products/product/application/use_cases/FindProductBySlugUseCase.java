@@ -1,15 +1,15 @@
 package microservice.ecommerce.products.product.application.use_cases;
 
 import microservice.ecommerce.products.product.application.ports.in.FindProductBySlugUseCasePort;
+import microservice.ecommerce.products.product.application.ports.out.ProductReadRepository;
 import microservice.ecommerce.products.product.domain.entity.Product;
 import microservice.ecommerce.products.product.domain.exception.ProductNotFound;
-import microservice.ecommerce.products.product.domain.repository.ProductRepository;
 
 public class FindProductBySlugUseCase implements FindProductBySlugUseCasePort {
 
-    private ProductRepository productRepository;
+    private ProductReadRepository productRepository;
 
-    public FindProductBySlugUseCase(ProductRepository productRepository) {
+    public FindProductBySlugUseCase(ProductReadRepository productRepository) {
         this.productRepository = productRepository;
     }
 

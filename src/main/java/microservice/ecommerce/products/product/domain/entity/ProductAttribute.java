@@ -1,7 +1,7 @@
 package microservice.ecommerce.products.product.domain.entity;
 
 public record ProductAttribute (
-    String attribute_definition,
+    String attribute_definition_slug,
     String string_value,
     Integer integer_value,
     Double double_value,
